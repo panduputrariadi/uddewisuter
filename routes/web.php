@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +42,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('produk/{id}', [ProductController::class, 'hapusProduk']);
 
     Route::get('detailProduk/{id}', [DashboardController::class, 'detailProduk']);
+    Route::post('order/{id}', [OrderController::class, 'pembelian'])->name('pembelian');
+    Route::get('order', [OrderController::class, 'halamanOrder'])->name('order');
+    Route::put('melengkapiOrder/{id}', [OrderController::class, 'melengkapiOrder'])->name('melengkapiOrder');
+    Route::get('hapusOrder/{id}', [OrderController::class, 'hapusOrder']);
 });

@@ -26,7 +26,7 @@
                         @if(auth()->check() && auth()->user()->role == 'admin')
                             <li><a class="dropdown-item" href="dashboard">Admin Dashboard</a></li>
                         @endif
-                        <li><a class="dropdown-item" href="#">Keranjang</a></li>
+                        <li><a class="dropdown-item" href="{{route('order')}}">Keranjang</a></li>
                     </ul>
                 </li>
             </div>

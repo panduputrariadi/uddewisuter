@@ -49,21 +49,21 @@
                 <span id="full-description" style="display: none;">{!! nl2br(e(mb_substr($produk->category->deskripsi, 100))) !!}</span>
                 <a id="show-more" onclick="showFullDescription()" style="cursor: pointer;" class="ps-1">Lihat lebih banyak</a>
             </p>
-            <a href="https://api.whatsapp.com/send?phone=62895428272427" target="_blank">
+            {{-- <a href="https://api.whatsapp.com/send?phone=62895428272427" target="_blank">
                 <button class="btn btn-primary px-3 ms-3 rounded-0">
                     <i class="fa fa-shopping-cart mr-1"></i> Tambah Ke Keranjang
                 </button>
-            </a>
+            </a> --}}
 
-            {{-- <form action="{{ route('customerItem', $product->id) }}" method="post">
+            <form action="{{route('pembelian', $produk->id)}}" method="post">
                 @csrf
                 <div class="d-flex align-items-center mb-4 pt-2">
                     <div class="input-group quantity mr-3" style="width: 130px;">
-                        <input type="number" class="form-control text-center" value="1" style="border-radius: 0px;" name="jumlah">
+                        <input type="number" class="form-control text-center" value="1" style="border-radius: 0px;" name="jumlahBeli">
                     </div>
                     <button class="btn btn-primary px-3 ms-3 rounded-0"><i class="fa fa-shopping-cart mr-1"></i> Tambah Ke Keranjang</button>
                 </div>
-            </form> --}}
+            </form>
         </div>
     </div>
     <div class="row px-xl-5">
