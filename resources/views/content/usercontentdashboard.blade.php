@@ -80,9 +80,6 @@
                                 <a class="btn btn-square ms-2 rounded-circle d-flex align-items-center justify-content-center" href="detailProduk/{{$data->id}}">
                                     <i class="fa fa-eye"></i>
                                 </a>
-                                <a class="btn btn-square ms-2 rounded-circle d-flex align-items-center justify-content-center" href="">
-                                    <i class="fa fa-shopping-cart"></i>
-                                </a>
                             </div>
                         </div>
                     </div>

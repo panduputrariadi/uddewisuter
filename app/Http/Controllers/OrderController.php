@@ -60,10 +60,12 @@ class OrderController extends Controller
             $validated = $request->validate([
                 'alamatTujuan' => 'nullable',
                 'nomorResi' => 'nullable',
-                'estimasi' => 'nullable'
+                'estimasi' => 'nullable',
+                'status' => 'nullable'
             ]);
-            $order->update($validated);
 
+            Alert::success('success', 'Berhasil Update Status Order');
+            $order->update($validated);
             return redirect()->back();
         } catch(ValidationException $e){
             $errors = $e->errors();
@@ -75,6 +77,11 @@ class OrderController extends Controller
 
             return redirect()->back()->withInput();
         }
+    }
+
+    public function kelolaOrder(){
+        $order = Order::with('product', 'user')->get();
+        return view('admin.adminmanageorder', compact('order'));
     }
 
     public function hapusOrder($id){

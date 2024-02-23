@@ -30,7 +30,7 @@
             </a>
         </li>
         <li>
-            <a href="order">
+            <a href="kelolaOrder">
                 <i class='bx bxs-message-dots' ></i>
                 <span class="text">Order Manage</span>
             </a>

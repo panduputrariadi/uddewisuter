@@ -46,4 +46,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('order', [OrderController::class, 'halamanOrder'])->name('order');
     Route::put('melengkapiOrder/{id}', [OrderController::class, 'melengkapiOrder'])->name('melengkapiOrder');
     Route::get('hapusOrder/{id}', [OrderController::class, 'hapusOrder']);
+
+    Route::get('kelolaOrder', [OrderController::class, 'kelolaOrder']);
 });

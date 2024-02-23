@@ -11,6 +11,7 @@ class Order extends Model
     use HasFactory;
 
     public const SEGERA_DI_KONFIRMASI = 'Segera di konfirmasi';
+    public const PEMBAYARAN_BERHASIL = 'Pembayaran Telah Berhasil';
 
     protected $fillable = [
         'productId',
@@ -25,5 +26,9 @@ class Order extends Model
 
     public function product(){
         return $this->belongsTo(Product::class, 'productId', 'id');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'userId', 'id');
     }
 }
