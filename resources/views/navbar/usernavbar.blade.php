@@ -16,7 +16,7 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{route('dashboardPelanggan')}}" class="nav-item nav-link active px-lg-4">Beranda</a>
                 <a href="{{route('dashboardPelanggan')}}#tentangKami" class="nav-item nav-link px-lg-4">Tentang Kami</a>
-                <a href="{{route('dashboardPelanggan')}}#produk" class="nav-item nav-link px-lg-4">Produk</a>
+                <a href="" class="nav-item nav-link px-lg-4">Produk</a>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
