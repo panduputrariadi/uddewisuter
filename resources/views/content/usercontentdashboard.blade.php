@@ -78,53 +78,40 @@
         <div class="row g-5">
             <div class="col-lg-12 align-items-center justify-content-center">
                 <div class="justify-content-center">
-                    <div class="section-title-4 text-primary px-3 ms-5 text-center" data-aos="fade-up">Produk Kami</div>
+                    <div class="section-title-4 text-primary px-3 ms-5 text-center" data-aos="fade-up">Temukan Kami</div>
                     <h1 class="display-6 ms-3 text-center mb-3" data-aos="fade-up">UD Dewisuter
                     </h1>
                 </div>
             </div>
         </div>
         <div class="row g-4 justify-content-center">
-            @foreach ($produk as $data)
-                <div class="col-lg-4 col-md-5" data-aos="fade-up">
-                    <div class="team-item position-relative rounded">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <div id="carousel-{{ $data->id }}" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    @foreach ($data->photo as $index => $photo)
-                                        <div class="product carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                            <img class="d-block w-100" src="{{ asset('storage/' . $photo->path) }}"
-                                                alt="Product Image" style="height:400px;">
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <a class="carousel-control-prev" href="#carousel-{{ $data->id }}" role="button"
-                                    data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </a>
-                                <a class="carousel-control-next " href="#carousel-{{ $data->id }}" role="button"
-                                    data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </a>
-                            </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-4">
+                    <div class="bg-light rounded p-4">
+                        <div class="text-center mb-4">
+                            <i class="fab fa-instagram fa-3x text-primary"></i>
+                            <h4 class="text-primary"><Address></Address></h4>
+                            <p class="mb-0">dewisuter.farm</p>
                         </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>{{ $data->namaProduk }} {{ Str::limit($data->category['namaKategori'], 20, '...') }}</h5>
-                            <p class="text-primary">Rp {{ number_format($data->category['harga'], 0, ',', '.') }}</p>
-                            <div class="team-social d-flex justify-content-center">
-                                <a class="btn btn-square ms-2 rounded-circle d-flex align-items-center justify-content-center" href="detailProduk/{{$data->id}}">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a class="btn btn-square ms-2 rounded-circle d-flex align-items-center justify-content-center" href="">
-                                    <i class="fa fa-shopping-cart"></i>
-                                </a>
-                            </div>
+                        <div class="text-center mb-4">
+                            <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
+                            <h4 class="text-primary">Mobile</h4>
+                            <p class="mb-0"> 0361-290-068</p>
+                        </div>
+
+                        <div class="text-center">
+                            <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
+                            <h4 class="text-primary">Email</h4>
+                            <p class="mb-0">sukawatidesa90@gmail.com</p>
                         </div>
                     </div>
                 </div>
-            @endforeach
+                <div class="col-lg-8">
+                    <div class="rounded">
+                        <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.787635377677!2d115.175189!3d-8.415467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23f6de537908f%3A0x6ed57e951abcbf41!2sYour%20Location!5e0!3m2!1sen!2sid!4v1646700939501!5m2!1sen!2sid" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

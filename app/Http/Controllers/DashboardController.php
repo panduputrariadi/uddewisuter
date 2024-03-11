@@ -16,4 +16,9 @@ class DashboardController extends Controller
         $produk = Product::findOrFail($id);
         return view('User.userdetailproduk', compact('produk'));
     }
+
+    public function produkDashboard(){
+        $produk = Product::with('category', 'photo')->get();
+        return view('User.userhalamanproduk', compact('produk'));
+    }
 }

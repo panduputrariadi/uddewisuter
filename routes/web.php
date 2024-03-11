@@ -48,4 +48,5 @@ Route::middleware(['auth'])->group(function(){
     Route::get('hapusOrder/{id}', [OrderController::class, 'hapusOrder']);
 
     Route::get('kelolaOrder', [OrderController::class, 'kelolaOrder']);
+    Route::get('produk-dashboard', [DashboardController::class, 'produkDashboard']);
 });

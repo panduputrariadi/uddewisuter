@@ -27,7 +27,7 @@
 <body>
 
     @include('navbar.usernavbar')
-    @include('content.detailproduk')
+    @include('content.usercontentproduk')
     @include('footer.userfooter')
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

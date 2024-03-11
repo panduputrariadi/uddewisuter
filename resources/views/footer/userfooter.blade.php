@@ -3,10 +3,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a href="#">Desa Sukawati</a>, All Right Reserved.
+                    &copy; <a href="#">UD Dewisuter</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    Designed By Ariya
+                    Designed By Satya Wira Dinata
                 </div>
             </div>
         </div>

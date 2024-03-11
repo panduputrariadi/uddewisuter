@@ -1,11 +1,11 @@
-<div class="container-fluid bg-light mb-5 py-5">
+<div class="bg-image container-fluid mb-5 py-5">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-        <h1 class="font-weight-semi-bold text-uppercase mb-3">Detail Order</h1>
+        <h1 class="font-weight-semi-bold text-uppercase mb-3 text-white">Pesanan</h1>
         <div class="d-inline-flex">
             <div class="" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/" class="text-dark text-decoration-none">Beranda</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Order Anda</li>
+                    <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-none">Beranda</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Pesanan Anda</li>
                 </ol>
             </div>
         </div>
