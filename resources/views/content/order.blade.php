@@ -56,12 +56,17 @@
                                         <i class='bx bx-edit-alt'></i>
                                     </button>
                                 </a>
+                                <a href="cetakNota/{{$item->id}}">
+                                    <button class="btn btn-sm btn-info">
+                                        <i class='bx bx-down-arrow-alt'></i>
+                                    </button>
+                                </a>
                             </td>
                             <td>
                                 @if ($item->alamatTujuan)
                                     <a href="https://api.whatsapp.com/send?phone=62895428272427" target="_blank">
-                                        <button class="btn btn-primary px-3 ms-3 rounded-0">
-                                            <i class="fas fa-comment mr-1"></i> Hubungi WhatsApp
+                                        <button class="btn btn-sm btn-primary px-3 ms-3 rounded-0">
+                                            <i class="fas fa-comment mr-1"></i> WhatsApp
                                         </button>
                                     </a>
                                 @endif

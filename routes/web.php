@@ -49,4 +49,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('kelolaOrder', [OrderController::class, 'kelolaOrder']);
     Route::get('produk-dashboard', [DashboardController::class, 'produkDashboard']);
+
+    //cetak nota
+    Route::get('cetakNota/{id}', [DashboardController::class, 'cetakNota']);
 });
