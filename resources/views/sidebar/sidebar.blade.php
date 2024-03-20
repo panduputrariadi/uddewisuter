@@ -23,12 +23,7 @@
                 <span class="text">Kategori</span>
             </a>
         </li>
-        <li>
-            <a href="user">
-                <i class='bx bxs-doughnut-chart' ></i>
-                <span class="text">User</span>
-            </a>
-        </li>
+        
         <li>
             <a href="kelolaOrder">
                 <i class='bx bxs-message-dots' ></i>
@@ -41,20 +36,10 @@
                 <span class="text">Dashboard Pelanggan</span>
             </a>
         </li>
-        <li>
-            <a href="transaksi">
-                <i class='bx bxs-group' ></i>
-                <span class="text">Transaksi</span>
-            </a>
-        </li>
+
     </ul>
     <ul class="side-menu">
-        <li>
-            <a href="#">
-                <i class='bx bxs-cog' ></i>
-                <span class="text">Inbox</span>
-            </a>
-        </li>
+
         <li>
             <a href="{{route('logout')}}" class="logout">
                 <i class='bx bxs-log-out-circle' ></i>

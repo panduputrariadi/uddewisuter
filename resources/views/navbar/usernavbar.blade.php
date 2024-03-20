@@ -16,7 +16,7 @@
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{route('dashboardPelanggan')}}" class="nav-item nav-link active px-lg-4">Beranda</a>
                 <a href="{{route('dashboardPelanggan')}}#tentangKami" class="nav-item nav-link px-lg-4">Tentang Kami</a>
-                <a href="produk-dashboard" class="nav-item nav-link px-lg-4">Produk</a>
+                <a href="{{route('produk-dashboard')}}" class="nav-item nav-link px-lg-4">Produk</a>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -24,7 +24,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         @if(auth()->check() && auth()->user()->role == 'admin')
-                            <li><a class="dropdown-item" href="dashboard">Admin Dashboard</a></li>
+                            <li><a class="dropdown-item" href="{{route('dashboard')}}">Admin Dashboard</a></li>
                         @endif
                         <li><a class="dropdown-item" href="{{route('order')}}">Keranjang</a></li>
                     </ul>

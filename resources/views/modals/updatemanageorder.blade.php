@@ -17,11 +17,7 @@
                             <option value="{{ \App\Models\Order::PEMBAYARAN_BERHASIL }}">Pembayaran Telah Berhasil</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Nomor Resi</label>
-                        <input type="text" class="form-control rounded-0" id="exampleInputEmail1" name="nomorResi"
-                            aria-describedby="emailHelp">
-                    </div>
+                    
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Estimasii</label>
                         <input type="text" class="form-control rounded-0" id="exampleInputEmail1" name="estimasi"

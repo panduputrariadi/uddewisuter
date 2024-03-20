@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/', [DashboardController::class, 'dashboardPelanggan'])->name('dashboardPelanggan');
     Route::get('dashboard', function () {
         return view('admin.admindashboard');
-    });
+    })->name('dashboard');
 
     Route::get('kategori', [CategoryController::class, 'halamanKategori']);
     Route::post('kategori', [CategoryController::class, 'simpanKategori']);
@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('hapusOrder/{id}', [OrderController::class, 'hapusOrder']);
 
     Route::get('kelolaOrder', [OrderController::class, 'kelolaOrder']);
-    Route::get('produk-dashboard', [DashboardController::class, 'produkDashboard']);
+    Route::get('produk-dashboard', [DashboardController::class, 'produkDashboard'])->name('produk-dashboard');
 
     //cetak nota
     Route::get('cetakNota/{id}', [DashboardController::class, 'cetakNota']);

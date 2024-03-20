@@ -27,6 +27,7 @@
                         <th>Status</th>
                         <th>Alamat Tujuan</th>
                         <th>Aksi</th>
+                        <th>Nota</th>
                         <th>Konfirmasi Pembayaran</th>
                     </tr>
                 </thead>
@@ -56,6 +57,9 @@
                                         <i class='bx bx-edit-alt'></i>
                                     </button>
                                 </a>
+
+                            </td>
+                            <td class="align-middle">
                                 <a href="cetakNota/{{$item->id}}">
                                     <button class="btn btn-sm btn-info">
                                         <i class='bx bx-down-arrow-alt'></i>

@@ -59,7 +59,6 @@ class OrderController extends Controller
             $order = Order::findOrFail($id);
             $validated = $request->validate([
                 'alamatTujuan' => 'nullable',
-                'nomorResi' => 'nullable',
                 'estimasi' => 'nullable',
                 'status' => 'nullable'
             ]);

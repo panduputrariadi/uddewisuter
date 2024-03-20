@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('jumlahBeli');
             $table->integer('totalPembelian');
             $table->string('alamatTujuan')->nullable();
-            $table->string('nomorResi')->nullable();
             $table->string('status');
             $table->string('estimasi')->nullable();
             $table->timestamps();

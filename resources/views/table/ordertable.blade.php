@@ -19,7 +19,6 @@
                                 <th>Total</th>
                                 <th>Status</th>
                                 <th>Alamat Tujuan</th>
-                                <th>Nomor Resi Pelanggan</th>
                                 <th>Estimasi</th>
                                 <th>Aksi</th>
                             </tr>
@@ -38,7 +37,6 @@
                                     <td class="align-middle">Rp {{ number_format($item->totalPembelian, 0, ',', '.') }}</td>
                                     <td>{{ $item->status }}</td>
                                     <td>{{ $item->alamatTujuan }}</td>
-                                    <td>{{$item->nomorResi}}</td>
                                     <td>{{$item->estimasi}}</td>
                                     <td class="align-middle">
                                         <a href="hapusOrder/{{ $item->id }}" data-confirm-delete="true"
