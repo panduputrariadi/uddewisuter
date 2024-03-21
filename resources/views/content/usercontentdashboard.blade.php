@@ -5,7 +5,7 @@
                 <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
                     <img class="position-absolute w-100 h-100 pt-5 pe-5" src="images/img-capt-1.jpeg" alt=""
                         style="object-fit: cover;" data-aos="fade-up">
-                    <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="images/img-capt-2.webp"
+                    <img class="position-absolute top-0 end-0 bg-white ps-2 pb-2" src="images/img-capt-2.jpeg"
                         alt="" style="width: 200px; height: 200px;" data-aos="fade-up">
                 </div>
             </div>
