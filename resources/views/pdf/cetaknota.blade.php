@@ -20,9 +20,29 @@
         th {
             background-color: #f2f2f2;
         }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        .header img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .alamat {
+            text-align: center;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
+    <div class="header">
+        <img src="../public/images/logo.png" alt="Logo">
+        <div class="alamat">
+            Petiga, Kec. Marga, Kabupaten Tabanan, Bali 82181
+        </div>
+    </div>
     <h2>Nota Pembelian</h2>
     <p><strong>Nama Pembeli:</strong> {{ $order->user->name }}</p>
     <table>
