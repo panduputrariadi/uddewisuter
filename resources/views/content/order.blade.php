@@ -4,7 +4,8 @@
         <div class="d-inline-flex">
             <div class="" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-none">Beranda</a></li>
+                    <li class="breadcrumb-item"><a href="/" class="text-white text-decoration-none">Beranda</a>
+                    </li>
                     <li class="breadcrumb-item active text-white" aria-current="page">Pesanan Anda</li>
                 </ol>
             </div>
@@ -14,7 +15,9 @@
 
 <div class="container-fluid pt-1">
     <div class="row px-xl-5">
-        <small id="emailHelp" class="form-text text-muted" style="font-style: italic; color: #999;">Mohon untuk isikan alamat tujuan dengan klik tombol kuning di kolom aksi! agar memunculkan tombol menuju WA untuk konfirmasi pembayaran
+        <small id="emailHelp" class="form-text text-muted" style="font-style: italic; color: #999;">Mohon untuk isikan
+            alamat tujuan dengan klik tombol kuning di kolom aksi! agar memunculkan tombol menuju WA untuk konfirmasi
+            pembayaran
             Anda</small>
         <div class="col-lg-12 table-responsive mb-5">
             <table class="table table-bordered text-center mb-0">
@@ -60,7 +63,7 @@
 
                             </td>
                             <td class="align-middle">
-                                <a href="cetakNota/{{$item->id}}">
+                                <a href="cetakNota/{{ $item->id }}">
                                     <button class="btn btn-sm btn-info">
                                         <i class='bx bx-down-arrow-alt'></i>
                                     </button>
