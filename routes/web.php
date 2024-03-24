@@ -52,4 +52,5 @@ Route::middleware(['auth'])->group(function(){
 
     //cetak nota
     Route::get('cetakNota/{id}', [DashboardController::class, 'cetakNota']);
+    Route::get('cetakInvoice/{id}', [DashboardController::class, 'cetakInvoice']);
 });

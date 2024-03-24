@@ -29,4 +29,9 @@ class DashboardController extends Controller
         $pdf = PDF::loadView('pdf.cetaknota', compact('order'));
         return $pdf->download('pembelian.pdf');
     }
+    public function cetakInvoice($id){
+        $order = Order::findOrFail($id);
+        $pdf = PDF::loadView('pdf.cetakinvoice', compact('order'));
+        return $pdf->download('invoice.pdf');
+    }
 }

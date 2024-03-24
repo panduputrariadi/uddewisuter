@@ -31,6 +31,7 @@
                         <th>Alamat Tujuan</th>
                         <th>Aksi</th>
                         <th>Nota</th>
+                        <th>Invoice</th>
                         <th>Konfirmasi Pembayaran</th>
                     </tr>
                 </thead>
@@ -47,7 +48,7 @@
                             <td class="align-middle">Rp {{ number_format($item->totalPembelian, 0, ',', '.') }}</td>
                             <td>{{ $item->status }}</td>
                             <td>{{ $item->alamatTujuan }}</td>
-                            <td class="align-middle">
+                            <td class="align-middle" style="width: 150px;">
                                 <a href="hapusOrder/{{ $item->id }}" data-confirm-delete="true"
                                     class="delete-confirmation">
                                     <button class="btn btn-sm btn-primary">
@@ -63,8 +64,17 @@
 
                             </td>
                             <td class="align-middle">
-                                <a href="cetakNota/{{ $item->id }}">
-                                    <button class="btn btn-sm btn-info">
+                                @if ($item->status == \App\Models\Order::PEMBAYARAN_BERHASIL)
+                                    <a href="cetakNota/{{ $item->id }}">
+                                        <button class="btn btn-sm btn-info">
+                                            <i class='bx bx-down-arrow-alt'></i>
+                                        </button>
+                                    </a>
+                                @endif
+                            </td>
+                            <td class="align-middle">
+                                <a href="cetakInvoice/{{ $item->id }}">
+                                    <button class="btn btn-sm btn-secondary">
                                         <i class='bx bx-down-arrow-alt'></i>
                                     </button>
                                 </a>
