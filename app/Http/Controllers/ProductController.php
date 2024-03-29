@@ -63,8 +63,8 @@ class ProductController extends Controller
         try{
             $produk = Product::findOrFail($id);
             $validated = $request->validate([
-                'namaProduk' => "nullable|string",
-                'jenisProduk' => "nullable|string",
+                'namaProduk' => "required|string",
+                'jenisProduk' => "required|string",
                 'categoriesId' => "nullable",
                 'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif'
             ]);

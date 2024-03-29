@@ -14,12 +14,18 @@ class OrderController extends Controller
     public function pembelian(Request $request, $id){
         try{
             $produk = Product::findOrFail($id);
+            $stokTersedia = $produk->category->stok;
             $request->validate([
-                'jumlahBeli' => "required|integer"
+                'jumlahBeli' => "required|integer|max:$stokTersedia"
             ]);
 
             $jumlahBeliProduk = $request->jumlahBeli;
             $totalPembelian = $jumlahBeliProduk * $produk->category->harga;
+            if($jumlahBeliProduk > $stokTersedia){
+                Alert::error('Error', 'Jumlah Pembelian tidak boleh melebihi jumlah stok produk yang sekarang');
+                return redirect()->back();
+            }
+
 
             $dataPembelian = [
                 'productId' => $id,
@@ -34,7 +40,7 @@ class OrderController extends Controller
                 $simpanPembelian->product()->associate();
                 $simpanPembelian->save();
             }
-
+            Alert::success('Success', 'Berhasil Menambahkan ke order');
             return redirect('order');
 
         } catch(ValidationException $e){
@@ -50,8 +56,15 @@ class OrderController extends Controller
     }
 
     public function halamanOrder(){
-        $order = Order::with('product')->where('userId', auth()->user()->id)->get();
+        $order = Order::with('product')->where('userId', auth()->user()->id)
+            ->where('status', Order::SEGERA_DI_KONFIRMASI)->get();
         return view('User.useroder', compact('order'));
+    }
+
+    public function halamanRiwayatPembelian(){
+        $order = Order::with('product')->where('userId', auth()->user()->id)
+            ->where('status', Order::PEMBAYARAN_BERHASIL)->get();
+        return view('User.userriwayatpembelian', compact('order'));
     }
 
     public function melengkapiOrder($id, Request $request){
@@ -63,7 +76,19 @@ class OrderController extends Controller
                 'status' => 'nullable'
             ]);
 
-            Alert::success('success', 'Berhasil Update Status Order');
+            if($order->status == Order::PEMBAYARAN_BERHASIL){
+                // Decrease stock if payment is successful
+                $product = $order->product;
+                if($product){
+                    $category = $product->category;
+                    if($category){
+                        $category->stok -= $order->jumlahBeli;
+                        $category->save();
+                    }
+                }
+            }
+
+            Alert::success('success', 'Berhasil Update Order');
             $order->update($validated);
             return redirect()->back();
         } catch(ValidationException $e){
@@ -86,6 +111,7 @@ class OrderController extends Controller
     public function hapusOrder($id){
         $order = Order::findOrFail($id);
         $order->delete($id);
+        Alert::success('Success', 'Berhasil Menghapus Orderan Anda');
         return redirect()->back();
     }
 }

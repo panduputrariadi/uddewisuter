@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>UD dewisuter</title>
+    <title>UD.Dewi Suter</title>
     <link rel="icon" href="img/logo-fix.png" type="image/png">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 

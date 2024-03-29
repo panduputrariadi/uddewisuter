@@ -15,7 +15,7 @@ return new class extends Migration
             $table->ulid('id')->primary();
             $table->string('namaProduk');
             $table->string('jenisProduk');
-            $table->foreignUlid('categoriesId')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreignUlid('categoriesId')->references('id')->on('categories')->onDelete('restrict');
             $table->timestamps();
         });
     }

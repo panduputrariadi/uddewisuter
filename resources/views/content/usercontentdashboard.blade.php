@@ -11,23 +11,23 @@
             </div>
             <div class="col-lg-6">
                 <div class="h-100">
-                    <div class="section-title d-inline-block text-primary px-3" data-aos="fade-up">Tentang UD Dewisuter
+                    <div class="section-title d-inline-block text-primary px-3" data-aos="fade-up">Tentang UD.Dewi Suter
                     </div>
-                    <h1 class="display-6 ms-3" data-aos="fade-up">UD Dewisuter</h1>
+                    <h1 class="display-6 ms-3" data-aos="fade-up">UD.Dewi Suter</h1>
                     <div class="p-4 mb-4">
-                        <p data-aos="fade-up">UD Dewisuter menyediakan babi ternak yang sehat dan berkualitas. Dengan
+                        <p data-aos="fade-up">UD.Dewi Suter menyediakan babi ternak yang sehat dan berkualitas. Dengan
                             pemilihan bibit yang cermat dan perawatan yang baik, mereka menjamin bahwa babi ternak yang
                             dijual memiliki standar kesehatan dan kebersihan yang tinggi. Untuk memastikan pertumbuhan
-                            optimal dan kesehatan babi ternak, UD Dewisuter menyediakan pakan babi berkualitas tinggi.
+                            optimal dan kesehatan babi ternak, UD.Dewi Suter menyediakan pakan babi berkualitas tinggi.
                             Dengan formulasi yang disesuaikan, pakan ini dirancang untuk memberikan nutrisi lengkap yang
-                            diperlukan untuk pertumbuhan yang sehat. UD Dewisuter juga menyediakan daging babi segar
+                            diperlukan untuk pertumbuhan yang sehat. UD.Dewi Suter juga menyediakan daging babi segar
                             yang dipotong dengan teliti dan diolah dengan standar kebersihan yang tinggi. Dengan
-                            pemrosesan yang higienis, daging babi yang dijual oleh UD Dewisuter selalu berkualitas dan
+                            pemrosesan yang higienis, daging babi yang dijual oleh UD Dewi Suter selalu berkualitas dan
                             lezat.</p>
-                        <a class="btn btn-outline-primary py-2 px-3 rounded-0"
+                        {{-- <a class="btn btn-outline-primary py-2 px-3 rounded-0"
                             href="https://maps.app.goo.gl/DSkvxH3V6yBog9tN8" data-aos="fade-up">
-                            Alamat UD Dewisuter
-                        </a>
+                            Alamat UD.Dewi Suter
+                        </a> --}}
                     </div>
 
                 </div>
@@ -42,7 +42,7 @@
             <div class="col-lg-12 align-items-center justify-content-center">
                 <div class="justify-content-center">
                     <div class="section-title-4 text-primary px-3 ms-5 text-center" data-aos="fade-up">Keunggulan Kami</div>
-                    <h1 class="display-6 ms-3 text-center" data-aos="fade-up">UD Dewisuter
+                    <h1 class="display-6 ms-3 text-center" data-aos="fade-up">UD.Dewi Suter
                     </h1>
                 </div>
             </div>
@@ -79,7 +79,7 @@
             <div class="col-lg-12 align-items-center justify-content-center">
                 <div class="justify-content-center">
                     <div class="section-title-4 text-primary px-3 ms-5 text-center" data-aos="fade-up">Temukan Kami</div>
-                    <h1 class="display-6 ms-3 text-center mb-3" data-aos="fade-up">UD Dewisuter
+                    <h1 class="display-6 ms-3 text-center mb-3" data-aos="fade-up">UD.Dewi Suter
                     </h1>
                 </div>
             </div>
@@ -91,18 +91,20 @@
                         <div class="text-center mb-4">
                             <i class="fab fa-instagram fa-3x text-primary"></i>
                             <h4 class="text-primary"><Address></Address></h4>
-                            <p class="mb-0">dewisuter.farm</p>
+                            <p class="mb-0">
+                                <a href="https://www.instagram.com/dewisuter.farm/">dewisuter.farm</a>
+                            </p>
                         </div>
                         <div class="text-center mb-4">
                             <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
                             <h4 class="text-primary">Mobile</h4>
-                            <p class="mb-0"> 0361-290-068</p>
+                            <p class="mb-0"> +62 895-4282-72427</p>
                         </div>
 
                         <div class="text-center">
                             <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
                             <h4 class="text-primary">Email</h4>
-                            <p class="mb-0">sukawatidesa90@gmail.com</p>
+                            <p class="mb-0">dewisuterud@gmail.com</p>
                         </div>
                     </div>
                 </div>

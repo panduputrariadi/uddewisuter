@@ -22,7 +22,7 @@ class CategoryController extends Controller
     public function simpanKategori(Request $request){
         try{
             $validated = $request->validate([
-                'namaKategori' => 'required|string',
+                'namaKategori' => 'required|string|unique:categories,namaKategori',
                 'stok' => 'required',
                 'harga' => 'required',
                 'berat' => 'required',

@@ -39,12 +39,6 @@
                                     <td>{{ $item->alamatTujuan }}</td>
                                     <td>{{$item->estimasi}}</td>
                                     <td class="align-middle">
-                                        <a href="hapusOrder/{{ $item->id }}" data-confirm-delete="true"
-                                            class="delete-confirmation">
-                                            <button class="btn btn-sm btn-primary">
-                                                <i class="bx bx-trash"></i>
-                                            </button>
-                                        </a>
                                         <a href="" class="" data-bs-toggle="modal"
                                             data-bs-target="#editOrder_{{ $item->id }}">
                                             <button type="button" class="btn btn-sm btn-warning">

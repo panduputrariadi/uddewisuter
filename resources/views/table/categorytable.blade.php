@@ -30,11 +30,11 @@
                                 <i class='bx bx-edit-alt'></i>
                             </button>
                         </a>
-                        <a href="kategori/{{$data->id}}" class="delete-confirmation" data-confirm-delete="true">
+                        {{-- <a href="kategori/{{$data->id}}" class="delete-confirmation" data-confirm-delete="true">
                             <button type="button" class="btn btn-danger text-light">
                                 <i class='bx bxs-trash-alt'></i>
                             </button>
-                        </a>
+                        </a> --}}
                     </td>
                 </tr>
                 @include('modals.updatecategory')

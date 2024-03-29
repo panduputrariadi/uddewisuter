@@ -28,7 +28,7 @@
 <body>
 
     @include('navbar.usernavbar')
-    @include('content.order')
+    @include('content.riwayatpembelian')
     @include('footer.userfooter')
     @include('sweetalert::alert')
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
