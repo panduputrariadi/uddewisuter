@@ -24,10 +24,10 @@
                             yang dipotong dengan teliti dan diolah dengan standar kebersihan yang tinggi. Dengan
                             pemrosesan yang higienis, daging babi yang dijual oleh UD Dewi Suter selalu berkualitas dan
                             lezat.</p>
-                        {{-- <a class="btn btn-outline-primary py-2 px-3 rounded-0"
-                            href="https://maps.app.goo.gl/DSkvxH3V6yBog9tN8" data-aos="fade-up">
-                            Alamat UD.Dewi Suter
-                        </a> --}}
+                        <a class="btn btn-outline-primary py-2 px-3 rounded-0"
+                            href="https://youtu.be/9VPD4iDfoq0" data-aos="fade-up">
+                            Menuju Video Company Profil
+                        </a>
                     </div>
 
                 </div>
