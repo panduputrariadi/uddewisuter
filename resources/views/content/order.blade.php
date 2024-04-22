@@ -26,6 +26,7 @@
                         <th>Produk</th>
                         <th>Harga</th>
                         <th>Jumlah Beli</th>
+                        <th>Biaya kirim</th>
                         <th>Total</th>
                         <th>Status</th>
                         <th>Alamat Tujuan</th>
@@ -44,6 +45,7 @@
                             <td class="align-middle">Rp
                                 {{ number_format($item->product->category['harga'], 0, ',', '.') }}</td>
                             <td class="align-middle">{{ $item->jumlahBeli }}</td>
+                            <td>Rp {{ number_format($item->biayaKirim, 0, ',', '.') }}</td>
                             <td class="align-middle">Rp {{ number_format($item->totalPembelian, 0, ',', '.') }}</td>
                             <td>{{ $item->status }}</td>
                             <td>{{ $item->alamatTujuan }}</td>

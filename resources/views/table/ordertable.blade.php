@@ -7,6 +7,11 @@
                     Konfirmasi Pembayaran
                 </a>
             </p> --}}
+            <a href="cetakLaporan">
+                <button type="button" class="btn btn-primary rounded-0 my-3">
+                    download laporan
+                </button>
+            </a>
             <div class="" id="konfirmasiPembayaran">
                 <div class="">
                     <table class="table table-bordered text-center mb-0">
@@ -16,6 +21,7 @@
                                 <th>Produk</th>
                                 <th>Harga</th>
                                 <th>Jumlah Beli</th>
+                                <td>Biaya kirim</td>
                                 <th>Total</th>
                                 <th>Status</th>
                                 <th>Alamat Tujuan</th>
@@ -34,6 +40,7 @@
                                     <td class="align-middle">Rp
                                         {{ number_format($item->product->category['harga'], 0, ',', '.') }}</td>
                                     <td class="align-middle">{{ $item->jumlahBeli }}</td>
+                                    <td>Rp {{ number_format($item->biayaKirim, 0, ',', '.') }}</td>
                                     <td class="align-middle">Rp {{ number_format($item->totalPembelian, 0, ',', '.') }}</td>
                                     <td>{{ $item->status }}</td>
                                     <td>{{ $item->alamatTujuan }}</td>

@@ -56,4 +56,6 @@ Route::middleware(['auth'])->group(function(){
 
     //riwayat pembelian
     Route::get('riwayatPembelian', [OrderController::class, 'halamanRiwayatPembelian'])->name('riwayatPembelian');
+
+    Route::get('cetakLaporan', [DashboardController::class, 'cetakPenjualan']);
 });

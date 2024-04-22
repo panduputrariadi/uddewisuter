@@ -17,10 +17,16 @@
                             <option value="{{ \App\Models\Order::PEMBAYARAN_BERHASIL }}">Pembayaran Telah Berhasil</option>
                         </select>
                     </div>
-                    
+
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Estimasii</label>
                         <input type="text" class="form-control rounded-0" id="exampleInputEmail1" name="estimasi"
+                            aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Biaya Kirim</label>
+                        <input type="number" class="form-control rounded-0" id="exampleInputEmail1" name="biayaKirim"
                             aria-describedby="emailHelp">
                     </div>
                     <button type="submit" class="btn btn-primary rounded-0">Simpan</button>

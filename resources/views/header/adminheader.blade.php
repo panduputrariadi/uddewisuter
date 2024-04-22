@@ -30,9 +30,9 @@
             </span>
         </li>
         <li>
-            <i class='bx bxs-dollar-circle' ></i>
+            <i class='bx bxs-circle' ></i>
             <span class="text">
-                <h3>$2543</h3>
+                <h3>25</h3>
                 <p>Total Sales</p>
             </span>
         </li>

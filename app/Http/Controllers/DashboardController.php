@@ -9,29 +9,41 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function dashboardPelanggan(){
+    public function dashboardPelanggan()
+    {
         $produk = Product::with('category', 'photo')->get();
         return view('User.userdashboard', compact('produk'));
     }
 
-    public function detailProduk($id){
+    public function detailProduk($id)
+    {
         $produk = Product::findOrFail($id);
         return view('User.userdetailproduk', compact('produk'));
     }
 
-    public function produkDashboard(){
+    public function produkDashboard()
+    {
         $produk = Product::with('category', 'photo')->get();
         return view('User.userhalamanproduk', compact('produk'));
     }
 
-    public function cetakNota($id){
+    public function cetakNota($id)
+    {
         $order = Order::findOrFail($id);
         $pdf = PDF::loadView('pdf.cetaknota', compact('order'));
         return $pdf->download('pembelian.pdf');
     }
-    public function cetakInvoice($id){
+    public function cetakInvoice($id)
+    {
         $order = Order::findOrFail($id);
         $pdf = PDF::loadView('pdf.cetakinvoice', compact('order'));
         return $pdf->download('invoice.pdf');
     }
+    public function cetakPenjualan()
+    {
+        $orders = Order::with('product')->get();
+        $pdf = PDF::loadView('pdf.cetakpenjualan', compact('orders'));
+        return $pdf->download('laporan_penjualan.pdf');
+    }
+
 }

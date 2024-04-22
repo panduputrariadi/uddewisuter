@@ -73,8 +73,16 @@ class OrderController extends Controller
             $validated = $request->validate([
                 'alamatTujuan' => 'nullable',
                 'estimasi' => 'nullable',
-                'status' => 'nullable'
+                'status' => 'nullable',
+                'biayaKirim' => 'nullable'
             ]);
+            $order->status == Order::PEMBAYARAN_BERHASIL;
+            $order->update($validated);
+
+            $totalPembelian = $order->totalPembelian + $request->biayaKirim;
+            $order->biayaKirim = $request->biayaKirim;
+            $order->totalPembelian = $totalPembelian;
+            $order->save();
 
             if($order->status == Order::PEMBAYARAN_BERHASIL){
                 // Decrease stock if payment is successful

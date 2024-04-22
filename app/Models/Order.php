@@ -18,6 +18,7 @@ class Order extends Model
         'jumlahBeli',
         'totalPembelian',
         'alamatTujuan',
+        'biayakKirim',
         'status',
         'estimasi',
         'userId'

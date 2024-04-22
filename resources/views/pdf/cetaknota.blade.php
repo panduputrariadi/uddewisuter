@@ -50,6 +50,7 @@
             <tr>
                 <th>Nama Produk</th>
                 <th>Jumlah Pembelian</th>
+                <th>Biaya kirim</th>
                 <th>Harga Produk</th>
                 <th>Total Harga</th>
                 <th>Status Pembayaran</th>
@@ -59,6 +60,7 @@
             <tr>
                 <td>{{ $order->product->namaProduk }} {{ $order->product->category->namaKategori }}</td>
                 <td>{{ $order->jumlahBeli }}</td>
+                <td>{{$order->biayakKirim}}</td>
                 <td>{{ $order->product->category->harga }}</td>
                 <td>{{ $order->totalPembelian }}</td>
                 <td>{{ $order->status }}</td>
