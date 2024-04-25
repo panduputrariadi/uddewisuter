@@ -1,12 +1,6 @@
 <div class="container-fluid pt-1">
     <div class="row px-xl-5">
         <div class="col-lg-12 table-responsive mb-5">
-            {{-- <p class="d-inline-flex gap-1">
-                <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#konfirmasiPembayaran" role="button"
-                    aria-expanded="false" aria-controls="konfirmasiPembayaran">
-                    Konfirmasi Pembayaran
-                </a>
-            </p> --}}
             <a href="cetakLaporan">
                 <button type="button" class="btn btn-primary rounded-0 my-3">
                     download laporan

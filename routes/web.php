@@ -6,6 +6,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController;
+use Illuminate\Routing\Router;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +29,7 @@ Route::get('registrasi', function(){
 Route::middleware(['auth'])->group(function(){
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [DashboardController::class, 'dashboardPelanggan'])->name('dashboardPelanggan');
-    Route::get('dashboard', function () {
-        return view('admin.admindashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'filterByDate'])->name('dashboard');
 
     Route::get('kategori', [CategoryController::class, 'halamanKategori']);
     Route::post('kategori', [CategoryController::class, 'simpanKategori']);
@@ -58,4 +58,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('riwayatPembelian', [OrderController::class, 'halamanRiwayatPembelian'])->name('riwayatPembelian');
 
     Route::get('cetakLaporan', [DashboardController::class, 'cetakPenjualan']);
+    Route::get('/export-pdf-by-date', [DashboardController::class, 'exportPDFByDate'])->name('export.pdf.by.date');
+
 });

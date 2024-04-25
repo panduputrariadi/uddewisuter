@@ -1,3 +1,11 @@
+@php
+    use App\Models\Order;
+
+    $orderCount = Order::where('status', Order::PEMBAYARAN_BERHASIL)->sum('jumlahBeli');
+    $salesCount = Order::where('status', Order::SEGERA_DI_KONFIRMASI)->sum('jumlahBeli');
+    $buyerCount = Order::where('status', Order::PEMBAYARAN_BERHASIL)->sum('totalPembelian');
+@endphp
+
 <main>
     <div class="head-title">
         <div class="left">
@@ -18,22 +26,22 @@
         <li>
             <i class='bx bxs-calendar-check' ></i>
             <span class="text">
-                <h3>1020</h3>
-                <p>New Order</p>
+                <h3>{{$orderCount}}</h3>
+                <p>Total Jumlah Pembelian</p>
             </span>
         </li>
         <li>
             <i class='bx bxs-group' ></i>
             <span class="text">
-                <h3>2834</h3>
-                <p>Visitors</p>
+                <h3>Rp {{number_format($buyerCount, 0, ',', '.')}}</h3>
+                <p>Total Transaksi</p>
             </span>
         </li>
         <li>
             <i class='bx bxs-circle' ></i>
             <span class="text">
-                <h3>25</h3>
-                <p>Total Sales</p>
+                <h3>{{$salesCount}}</h3>
+                <p>Konfirmasi Pemesanan</p>
             </span>
         </li>
     </ul>
