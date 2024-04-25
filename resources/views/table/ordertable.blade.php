@@ -15,11 +15,12 @@
                                 <th>Produk</th>
                                 <th>Harga</th>
                                 <th>Jumlah Beli</th>
-                                <td>Biaya kirim</td>
+                                <th>Biaya kirim</th>
                                 <th>Total</th>
                                 <th>Status</th>
                                 <th>Alamat Tujuan</th>
                                 <th>Estimasi</th>
+                                <th>Tanggal Order</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -39,6 +40,7 @@
                                     <td>{{ $item->status }}</td>
                                     <td>{{ $item->alamatTujuan }}</td>
                                     <td>{{$item->estimasi}}</td>
+                                    <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
                                     <td class="align-middle">
                                         <a href="" class="" data-bs-toggle="modal"
                                             data-bs-target="#editOrder_{{ $item->id }}">

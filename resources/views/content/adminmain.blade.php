@@ -54,7 +54,6 @@
                                             @endforeach
                                         </td>
                                         <td>{{ \Carbon\Carbon::parse($order->product->category['created_at'])->format('d-m-Y') }}</td>
-
                                     </tr>
                                     @endforeach
                                 </tbody>
