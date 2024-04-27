@@ -11,8 +11,9 @@ use Illuminate\Validation\ValidationException;
 
 class OrderController extends Controller
 {
-    public function pembelian(Request $request, $id){
-        try{
+    public function pembelian(Request $request, $id)
+    {
+        try {
             $produk = Product::findOrFail($id);
             $stokTersedia = $produk->category->stok;
             $request->validate([
@@ -21,7 +22,7 @@ class OrderController extends Controller
 
             $jumlahBeliProduk = $request->jumlahBeli;
             $totalPembelian = $jumlahBeliProduk * $produk->category->harga;
-            if($jumlahBeliProduk > $stokTersedia){
+            if ($jumlahBeliProduk > $stokTersedia) {
                 Alert::error('Error', 'Jumlah Pembelian tidak boleh melebihi jumlah stok produk yang sekarang');
                 return redirect()->back();
             }
@@ -36,14 +37,13 @@ class OrderController extends Controller
             ];
 
             $simpanPembelian = Order::create($dataPembelian);
-            if(!$simpanPembelian->product){
+            if (!$simpanPembelian->product) {
                 $simpanPembelian->product()->associate();
                 $simpanPembelian->save();
             }
             Alert::success('Success', 'Berhasil Menambahkan ke order');
             return redirect('order');
-
-        } catch(ValidationException $e){
+        } catch (ValidationException $e) {
             $errors = $e->errors();
             foreach ($errors as $field => $errorMessages) {
                 foreach ($errorMessages as $errorMessage) {
@@ -55,20 +55,23 @@ class OrderController extends Controller
         }
     }
 
-    public function halamanOrder(){
+    public function halamanOrder()
+    {
         $order = Order::with('product')->where('userId', auth()->user()->id)
             ->where('status', Order::SEGERA_DI_KONFIRMASI)->get();
         return view('User.useroder', compact('order'));
     }
 
-    public function halamanRiwayatPembelian(){
+    public function halamanRiwayatPembelian()
+    {
         $order = Order::with('product')->where('userId', auth()->user()->id)
             ->where('status', Order::PEMBAYARAN_BERHASIL)->get();
         return view('User.userriwayatpembelian', compact('order'));
     }
 
-    public function melengkapiOrder($id, Request $request){
-        try{
+    public function melengkapiOrder($id, Request $request)
+    {
+        try {
             $order = Order::findOrFail($id);
             $validated = $request->validate([
                 'alamatTujuan' => 'nullable',
@@ -76,6 +79,13 @@ class OrderController extends Controller
                 'status' => 'nullable',
                 'biayaKirim' => 'nullable'
             ]);
+
+            // Decrease stock if payment is successful
+            $product = $order->product;
+            $category = $product->category;
+            $order->historiStok += $category->stok; // Perbarui histori stok
+            $order->save();
+
             $order->status == Order::PEMBAYARAN_BERHASIL;
             $order->update($validated);
 
@@ -84,12 +94,12 @@ class OrderController extends Controller
             $order->totalPembelian = $totalPembelian;
             $order->save();
 
-            if($order->status == Order::PEMBAYARAN_BERHASIL){
+            if ($order->status == Order::PEMBAYARAN_BERHASIL) {
                 // Decrease stock if payment is successful
                 $product = $order->product;
-                if($product){
+                if ($product) {
                     $category = $product->category;
-                    if($category){
+                    if ($category) {
                         $category->stok -= $order->jumlahBeli;
                         $category->save();
                     }
@@ -99,7 +109,7 @@ class OrderController extends Controller
             Alert::success('success', 'Berhasil Update Order');
             $order->update($validated);
             return redirect()->back();
-        } catch(ValidationException $e){
+        } catch (ValidationException $e) {
             $errors = $e->errors();
             foreach ($errors as $field => $errorMessages) {
                 foreach ($errorMessages as $errorMessage) {
@@ -111,12 +121,14 @@ class OrderController extends Controller
         }
     }
 
-    public function kelolaOrder(){
+    public function kelolaOrder()
+    {
         $order = Order::with('product', 'user')->get();
         return view('admin.adminmanageorder', compact('order'));
     }
 
-    public function hapusOrder($id){
+    public function hapusOrder($id)
+    {
         $order = Order::findOrFail($id);
         $order->delete($id);
         Alert::success('Success', 'Berhasil Menghapus Orderan Anda');

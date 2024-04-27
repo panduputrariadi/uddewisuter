@@ -21,7 +21,8 @@ class Order extends Model
         'biayakKirim',
         'status',
         'estimasi',
-        'userId'
+        'userId',
+        'historiStok'
     ];
 
     public function product(){

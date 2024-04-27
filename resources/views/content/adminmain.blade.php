@@ -22,10 +22,11 @@
                                         <th>Produk</th>
                                         <th>Harga</th>
                                         <th>Jumlah Beli</th>
-                                        <th>Sisa Stok</th>
-                                        <th>Tanggal Stok dikurangi</th>
                                         <th>Stok Awal</th>
                                         <th>Tanggal Stok Masuk</th>
+                                        {{-- <th>Stok Akhir</th> --}}
+                                        <th>Tanggal Stok Akhir</th>
+                                        <th>Histori Stok</th>
                                     </tr>
                                 </thead>
                                 <tbody class="align-middle">
@@ -36,17 +37,8 @@
                                         <td>{{$order->product['namaProduk']}} - {{$order->product->category['namaKategori']}}</td>
                                         <td>Rp {{ number_format($order->product->category['harga'], 0, ',', '.') }}</td>
                                         <td>{{ $order->jumlahBeli }}</td>
-                                        {{-- Menampilkan jumlah beli --}}
-                                        <td>
-                                            @foreach ($stocks as $stock)
-                                                @if ($stock['category'] == $order->product->category['namaKategori'])
-                                                    {{ $stock['initial_stock'] }}
-                                                @endif
-                                            @endforeach
-                                        </td>
-                                        <td>{{ \Carbon\Carbon::parse($order->updated_at)->format('d-m-Y') }}</td>
-                                        {{-- Menampilkan stok awal --}}
-                                        <td>
+                                         {{-- Menampilkan stok awal --}}
+                                         <td>
                                             @foreach ($stocks as $stock)
                                                 @if ($stock['category'] == $order->product->category['namaKategori'])
                                                     {{ $stock['final_stock'] }}
@@ -54,6 +46,16 @@
                                             @endforeach
                                         </td>
                                         <td>{{ \Carbon\Carbon::parse($order->product->category['created_at'])->format('d-m-Y') }}</td>
+                                        {{-- Menampilkan jumlah beli --}}
+                                        {{-- <td>
+                                            @foreach ($stocks as $stock)
+                                                @if ($stock['category'] == $order->product->category['namaKategori'])
+                                                    {{ $stock['initial_stock'] }}
+                                                @endif
+                                            @endforeach
+                                        </td> --}}
+                                        <td>{{ \Carbon\Carbon::parse($order->updated_at)->format('d-m-Y') }}</td>
+                                        <td>{{$order->historiStok}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
